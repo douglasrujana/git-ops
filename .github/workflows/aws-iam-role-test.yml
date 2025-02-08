@@ -1,0 +1,29 @@
+name: AWS Role Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  aws-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 🔑 Configurar IAM Role con GitHub OIDC
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: 🔍 Probar conexión con AWS
+        run: |
+          if aws sts get-caller-identity; then
+            echo "✅ Conexión exitosa a AWS con IAM Role"
+          else
+            echo "❌ Error al conectar con AWS"
+            exit 1
+          fi
