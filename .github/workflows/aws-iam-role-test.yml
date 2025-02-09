@@ -18,7 +18,7 @@ jobs:
         with:
           #role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           #role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          role-to-assume: arn:aws:iam::122610492430:role/GitOps_IAMRole
+          role-to-assume: arn:aws:iam::122610492430:role/GitOps_CDKRole
           aws-region: us-east-1
 
       - name: 🔍 Probar conexión con AWS
