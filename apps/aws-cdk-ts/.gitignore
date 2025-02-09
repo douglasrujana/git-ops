@@ -1,12 +1,31 @@
-*.js
-!jest.config.js
-*.d.ts
+# Dependecias de Node.js
 node_modules
 
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+cdk.contex.json
+
+# Local
+config.js
 .git_ignore_local
 .env
+config.local.ts
 config
+
+# VSCODE 
+.vscode/
+
+# Archivos de construcción 
+dist/ 
+*.js
+!jest.
+*.d.ts
+
+# Archivos de log
+*.log
+
+# Archivos de sistemas
+.DS_Store
+Thumbs.db
 
