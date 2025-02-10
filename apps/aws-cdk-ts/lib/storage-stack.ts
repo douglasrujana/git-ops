@@ -18,7 +18,7 @@ export class StorageStack extends cdk.Stack {
     });
     
     // (Opcional) Exporta el nombre del bucket como un output de CloudFormation
-    new cdk.CfnOutput(this, '1278-drc-bucket', {
+    new cdk.CfnOutput(this, 'BucketNameOutput', {
       value: this.bucket.bucketName,
       description: 'El nombre del bucket de S3',
     });
