@@ -15,6 +15,7 @@ export class StorageStack extends cdk.Stack {
       blockPublicAccess: BlockPublicAccess.BLOCK_ALL, // Bloquea todo el acceso público al bucket
       enforceSSL: true, // Fuerza el uso de HTTPS para todas las solicitudes
       removalPolicy: cdk.RemovalPolicy.DESTROY,  // Elimina el bucket al destruir el stack
+      autoDeleteObjects: true, // Esto asegura que los objetos se eliminen automáticamente al eliminar el bucket
     });
     
     // (Opcional) Exporta el nombre del bucket como un output de CloudFormation
