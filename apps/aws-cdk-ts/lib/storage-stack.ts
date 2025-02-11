@@ -9,7 +9,7 @@ export class StorageStack extends cdk.Stack {
     super(scope, id, props);
     
     // Crea un bucket de S3 con configuraciones comunes
-    this.bucket = new Bucket(this, '1278-drc-bucket', {
+    this.bucket = new Bucket(this, '1278-bucket-backup', {
       versioned: true, // Habilita el versionado para el bucket
       encryption: BucketEncryption.S3_MANAGED, // Cifrado automático con claves gestionadas por S3
       blockPublicAccess: BlockPublicAccess.BLOCK_ALL, // Bloquea todo el acceso público al bucket
